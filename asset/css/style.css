@@ -342,7 +342,7 @@ h4 {
 @media screen and (max-width:600px) {
     header {
         position: relative;
-        width: 80vw;
+        width: 100%;
         height: 50%;
         display: flex;
         flex-direction: column;
@@ -376,7 +376,7 @@ h4 {
     }
 
     .icon {
-        width: 35%;
+        width: 50%;
         margin: 1%;
     }
 
@@ -395,6 +395,7 @@ h4 {
     }
 
     .section-carousel {
+        width: 100%;
         background-color: var(--black-900);
         display: flex;
         flex-direction: column;
@@ -411,6 +412,9 @@ h4 {
         box-shadow: var(--shadow-box);
     }
 
+    .section-galery {
+        width: 100%;
+    }
 
     .content-galery {
         display: flex;
@@ -428,7 +432,7 @@ h4 {
     }
 
     .book-buy {
-        width: 60vw;
+        width: 90%;
         padding: 5%;
         margin: 4% 0;
         border-radius: 0;
@@ -440,10 +444,14 @@ h4 {
 
     .book-buy a img {
         width: 100%;
-        height: 65vw;
+        height: 90vw;
     }
 
     .book-buy p {
+        font-size: 4.5vw;
+    }
+
+    .star {
         font-size: 4.5vw;
     }
 
@@ -462,6 +470,10 @@ h4 {
 
     .btn-buy a {
         font-size: 5vw;
+    }
+
+    .section-location {
+        width: 100%;
     }
 
     .content-location {
@@ -488,6 +500,7 @@ h4 {
     }
 
     footer {
+        width: 100%;
         flex-direction: column;
         justify-content: flex-start;
         height: 100vw;
@@ -503,15 +516,15 @@ h4 {
     .client a,
     .institution a,
     .create a {
-        font-size: 2.5vw;
+        font-size: 3.5vw;
     }
 
     .client h3,
     .institution h3 {
-        font-size: 4vw;
+        font-size: 5vw;
     }
 
     h4 {
-        font-size: 4vw;
+        font-size: 5vw;
     }
 }
