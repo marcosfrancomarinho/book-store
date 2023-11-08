@@ -75,7 +75,7 @@ function loopResponsive() {
             $(".image").css("transform", "translateX(0)")
             i++
         }, 50)
-    }, 6000)
+    }, 4000)
 }
 
 function reponsiveCarousel() {
