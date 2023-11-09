@@ -472,6 +472,8 @@ h4 {
     }
 
     .btn-buy a {
+        display: inline-block;
+        width: 100%;
         font-size: 5vw;
     }
 
