@@ -45,9 +45,9 @@ function scrollPage() {
     } else {
         $(".material-symbols-outlined").css("display", "block")
         if (window.scrollY > 250) {
-            $(".icon").hide()
+            $(".icon").hide(500)
         } else {
-            $(".icon").show()
+            $(".icon").show(500)
         }
     }
 }
