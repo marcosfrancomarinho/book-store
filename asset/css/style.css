@@ -362,6 +362,8 @@ h4 {
     .location a,
     .book a,
     .suport a {
+        width: 100%;
+        display: inline-block;
         font-size: 20px;
         text-transform: uppercase;
     }
