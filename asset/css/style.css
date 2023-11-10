@@ -564,7 +564,9 @@ h4 {
         padding: 1%;
         height: 13vw;
     }
-
+    .btn-buy a {
+    font-size: 1.2vw;
+    }
     .value {
         font-size: 1.3vw;
     }
