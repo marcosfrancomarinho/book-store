@@ -560,6 +560,16 @@ h4 {
         opacity: 0.4;
     }
 
+    .book-buy {
+        width: 10vw;
+        border-radius: 5px;
+    }
+
+    .book-buy a img {
+        padding: 1%;
+        height: 13vw;
+    }
+
     .title-two {
         font-size: 2.2vw;
     }
