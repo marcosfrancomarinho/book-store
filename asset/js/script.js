@@ -26,6 +26,7 @@ $(".btn-next").click(() => {
 $(".btn-back").click(() => {
     check()
     index--
+    carousel(index)
 })
 function check() {
     if (index < 0) {
