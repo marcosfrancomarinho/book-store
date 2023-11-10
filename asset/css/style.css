@@ -409,7 +409,7 @@ h4 {
     .image {
         width: 100%;
         padding: 2px;
-        box-shadow: var(--shadow-box);
+        box-shadow: inset 0px 0px 0 15px var(--orange-500);
     }
 
     .section-galery {
