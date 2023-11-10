@@ -14,20 +14,27 @@ $(window).ready(() => {
 })
 
 function carousel() {
-    if (index >= 3) { index = 0 }
+    check()
     $(".content-carousel").css("transform", `translateX(${-911.281 * index}px)`)
+    console.log(index)
 }
 $(".btn-next").click(() => {
     index++
+    check()
     carousel(index)
 })
 $(".btn-back").click(() => {
-    if (index <= 0) {
-        index = 1
-    }
+    check()
     index--
 })
-
+function check() {
+    if (index < 0) {
+        index = 0;
+    }
+    if (index >= 3) {
+        index = 0
+    };
+}
 const loop = setInterval(() => {
     carousel(index)
     index++
