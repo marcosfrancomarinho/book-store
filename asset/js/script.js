@@ -55,7 +55,7 @@ function scrollPage() {
         if (window.scrollY > 250) {
             $(".icon").hide(500)
         } else {
-            $(".icon").show(100)
+            $(".icon").show(500)
         }
     }
 }
