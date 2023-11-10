@@ -15,8 +15,11 @@ $(window).ready(() => {
 
 function carousel() {
     check()
-    $(".content-carousel").css("transform", `translateX(${-911.281 * index}px)`)
-    console.log(index)
+    if (innerWidth < 1500) {
+        $(".content-carousel").css("transform", `translateX(${-911.281 * index}px)`)
+    } else {
+        $(".content-carousel").css("transform", `translateX(${-1114.620 * index}px)`)
+    }
 }
 $(".btn-next").click(() => {
     index++
