@@ -43,7 +43,7 @@ const loop = setInterval(() => {
 
 function scrollPage() {
     if (innerWidth > 600) {
-        if (window.scrollY > 250) {
+        if (window.scrollY > 0) {
             $(".icon").hide()
             $("header").css({ "justify-content": "center", "height": "5vw" })
         } else {
@@ -52,7 +52,7 @@ function scrollPage() {
         }
     } else {
         $(".material-symbols-outlined").css("display", "block")
-        if (window.scrollY > 250) {
+        if (window.scrollY > 0) {
             $(".icon").hide(500)
         } else {
             $(".icon").show(500)
