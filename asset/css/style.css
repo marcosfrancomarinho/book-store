@@ -162,7 +162,7 @@ button a:visited {
 
 .section-galery {
     width: 80vw;
-    background-color: black;
+    background-color: var(--black-900);
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -616,6 +616,7 @@ h4 {
     .carousel {
         width: 1114.620px;
     }
+
     .content-carousel a img {
         width: 360px;
         height: 500px;
