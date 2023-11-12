@@ -77,8 +77,7 @@ function source(value) {
         content: containerLinks[number][5].innerText,
         img: containerLinks[number][0].children[0].src,
     }
-    localStorage.setItem("book", JSON.stringify(object))
-    console.log(object.content)
+    localStorage.setItem("book", JSON.stringify(object))
 }
 function geratorImg() {
     let img = document.querySelector(".content-carousel").children
@@ -106,7 +105,7 @@ function reponsiveCarousel() {
     geratorImg()
     if (innerWidth < 600) {
         clearInterval(loop)
-        $(".section-carousel").html("<h2 class='title-one'>tops livros</h2><a href='./content.html' target=_blanck ><img onclick= source(this.src) class ='image' src=./asset/image/image-01.jpg></a>")
+        $(".section-carousel").html("<h2 class='title-one'>tops livros</h2><a href='./shopping/index.html' target=_blanck ><img onclick= source(this.src) class ='image' src=./asset/image/image-01.jpg></a>")
         loopResponsive()
     }
 }
