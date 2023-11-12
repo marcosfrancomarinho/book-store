@@ -105,7 +105,7 @@ function reponsiveCarousel() {
     geratorImg()
     if (innerWidth < 600) {
         clearInterval(loop)
-        $(".section-carousel").html("<h2 class='title-one'>tops livros</h2><a href='./shopping/index.html' target=_blanck ><img onclick= source(this.src) class ='image' src=../asset/image/image-01.jpg></a>")
+        $(".section-carousel").html("<h2 class='title-one'>tops livros</h2><a href='../shopping/index.html' target=_blanck ><img onclick= source(this.src) class ='image' src=./asset/image/image-01.jpg></a>")
         loopResponsive()
     }
 }
