@@ -61,7 +61,7 @@ function check() {
 const loop = setInterval(() => {
     carousel()
     index++
-}, 2000)
+}, 5000)
 
 function scrollPage() {
     if (innerWidth > 600) {
