@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link href="./asset/css/style.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.7.1.js"
+                integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script defer src="./asset/js/script.js"></script>
+        <script defer src="./asset/js/content.js"></script>
+        <title>Book Store</title>
+</head>
+
+<body id="home-link">
+        <header>
+                <div class="icon">
+                        <img src="./asset/image/logo.jpg" alt="icon" class="icon">
+                </div>
+                <span class="material-symbols-outlined">menu</span>
+                <nav>
+                        <button class="home"> <a href="#home-link">Home</a></button>
+                        <button class="book"> <a href="#book-link">Livros</a></button>
+                        <button class="location"><a href="#location-link">Localização</a></button>
+                        <span class="suport">
+                                <input type="text" id="search" name="search" oninput="search(this)" placeholder="pesquisar">
+                                <select class="all-books" size="20" onchange="openLink(this.value)"></select>
+                        </span>
+                </nav>
+        </header>
+        <section class="section-carousel">
+                <div class="carousel">
+                        <h2 class="title-one">tops livros</h2>
+                        <div class="content-carousel"></div>
+                </div>
+                <div class="btn-carousel">
+                        <button class="btn-back">&#10094;</button>
+                        <button class="btn-next">&#10095;</button>
+                </div>
+        </section>
+        <section class="section-galery" id="book-link">
+                <div class="section-container-galery">
+                        <h2 class="title-two">livros mais vendidos</h2>
+                        <div class="content-galery"></div>
+                </div>
+        </section>
+        <section class="section-location" id="location-link">
+                <h2 class="title-three">NOSSO ENDEREÇO</h2>
+                <div class="content-location">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2974.8312487921517!2d-46.68702642555244!3d-23.623238963866726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5096054fe973%3A0xd13dc7840735c604!2sBOOK%20STORE!5e1!3m2!1spt-BR!2sbr!4v1698961885957!5m2!1spt-BR!2sbr"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <ul class="andress">
+                                <li>Av. Santo Amaro, 6960 - Alto da Boa Vista, São Paulo - SP.</li>
+                                <li>Tel: (011)992576464</li>
+                                <img src="./asset/image/loja.jpg" alt="store">
+                        </ul>
+                </div>
+        </section>
+        <footer>
+                <div class="client">
+                        <h3>Antendimento</h3>
+                        <a href="">Política de Vendas Trocas e Privacidade</a>
+                        <a href="">Termos e Condições de Compra</a>
+                        <a href="">Fale Conosco</a>
+                </div>
+                <div class="institution">
+                        <h3>Institucional</h3>
+                        <a href="">Sobre a Book Store</a>
+                        <a href="">Relações com Investidores</a>
+                        <a href="">Trabalhe Conosco</a>
+                        <a href="">Seja um parceiro</a>
+                </div>
+                <div class="create">
+                        <h4> criado por &copy;marcosmarinho</h4>
+                        <a
+                                href="https://www.instagram.com/_marcosmarinho98/?fbclid=IwAR0NCjNYkOKXB1hlyQIvB9WR_R6dCRBJjpqw5EMG5oM2iRrPD_GKREcejRw">Instagram</a>
+                        <a href="https://twitter.com/marcosmarinho98">Twitter</a>
+                </div>
+
+        </footer>
+</body>
+
+</html>
