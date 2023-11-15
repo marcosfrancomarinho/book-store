@@ -484,6 +484,7 @@ h4 {
     .all-books {
         width: 100%;
         border-radius: 0;
+        color: var(--white-900);
     }
 
     .icon {
