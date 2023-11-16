@@ -127,21 +127,23 @@ function allBoks(object) {
         </li>`
     })
 }
-function search(element) {
-    if (element.value.length == 0) {
-        $(".all-books").css({ "display": "none" })
+
+function search() {
+    let info = document.querySelector("#search")
+    info = info.value.toLowerCase()
+    const ul = document.querySelectorAll(".all-books li")
+
+    if (info.length > 0) {
+        $(".all-books").css("display", "flex")
     } else {
-        $(".all-books").css({ "display": "flex" })
+        $(".all-books").css("display", "none")
     }
-    const value = element.value.toLowerCase()
-    const object = document.querySelector(".all-books")
-    for (option of object.children) {
-        if (option.innerText.includes(value)) {
-            option.style.display = "block"
+    for (li of ul) {
+        const text = li.textContent.toLowerCase()
+        if (text.includes(info)) {
+            li.style.display = "flex"
         } else {
-            option.style.display = "none"
+            li.style.display = "none"
         }
     }
 }
-
-
