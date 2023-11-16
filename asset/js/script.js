@@ -118,6 +118,7 @@ function createCarousel(object) {
     })
 }
 function allBoks(object) {
+    $("#search").focus()
     object.map(data => {
         document.querySelector(".all-books").innerHTML += `
         <li onclick="source(${data.id})" class="option">
