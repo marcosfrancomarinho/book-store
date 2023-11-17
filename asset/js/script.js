@@ -1,5 +1,6 @@
 let index = 0
 let bookcase;
+const charset = str => (str.normalize("NFD").replace(/[^a-zA-Z\s]/g, ""))
 const source = (value) => localStorage.setItem("ID", JSON.stringify(value))
 const width = () => document.querySelector(".content-carousel").children[0].children[0].width + 0.5
 
@@ -149,7 +150,30 @@ function search() {
     }
 }
 $(window).keydown(function (e) {
+    let input = document.querySelector("#search")
     if (e.keyCode == 13) {
-        alert()
+        if (input.value != 0) {
+            const element = bookcase.filter(data => {
+                let name = data.name.toLowerCase()
+                let content = data.content.toLowerCase()
+                let value = input.value.toLowerCase()
+                name = charset(name)
+                content = charset(content)
+                value = charset(value)
+                if (name.includes(value) || content.includes(value)) {
+                    return data
+                }
+            })
+            if (element.length != 0) {
+                source(element[0].id)
+                open("./shopping/index.html")
+            } else {
+                alert("Livro não econtrado")
+                $(".all-books").css("display", "none")
+                input.value = ""
+            }
+        }
     }
 })
+
+
