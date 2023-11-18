@@ -89,7 +89,7 @@ function create(e) {
 const convert = (value) => `R$ ${(value).toFixed(2).replace(".", ",")}`
 
 function price(value) {
-    const currency = object[index].price;
+    const currency = object[idx].price;
     $(".value").html(`R$ ${(currency * value).toFixed(2).replace(".", ",")}`)
 }
 function readMore() {
