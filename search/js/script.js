@@ -76,7 +76,6 @@ function suggestion(data) {
     section.className = "books-sugestions"
     while (random.length < quant) {
         let number = Math.floor(Math.random() * data.length)
-        console.log(number)
         if (random.indexOf(number) == -1) {
             random.push(number)
         }
