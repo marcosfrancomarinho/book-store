@@ -41,7 +41,7 @@ function found(element) {
         <h2>Resultados</>
         <div class="container-suggestion">
             <a href="../shopping/index.html" class="sinopse" >
-                <img onclick="source(${data.id})" src=".${data.image}">
+                <img onclick="source(${data.id})" alt="Livros" src=".${data.image}">
             </a>
             <p>${data.name}</p>
             <div class="star">${star(data.star)}</div>
@@ -84,7 +84,7 @@ function suggestion(data) {
         section.innerHTML += `
         <div class="book-buy">
             <a href="../shopping/index.html" class="sinopse" >
-                <img onclick="source(${data[index].id})" src=".${data[index].image}">
+                <img onclick="source(${data[index].id})" alt="livros" src=".${data[index].image}">
             </a>
             <p>${data[index].name}</p>
             <div class="star">${star(data[index].star)}</div>
