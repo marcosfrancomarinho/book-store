@@ -40,7 +40,7 @@ function found(element) {
         section.innerHTML += `
         <h2>Resultados</>
         <div class="container-suggestion">
-            <a href="../shopping/index.html" class="sinopse" target="_blank">
+            <a href="../shopping/index.html" class="sinopse" >
                 <img onclick="source(${data.id})" src=".${data.image}">
             </a>
             <p>${data.name}</p>
@@ -84,14 +84,14 @@ function suggestion(data) {
     random.map((index) => {
         section.innerHTML += `
         <div class="book-buy">
-            <a href="../shopping/index.html" class="sinopse" target="_blank">
+            <a href="../shopping/index.html" class="sinopse" >
                 <img onclick="source(${data[index].id})" src=".${data[index].image}">
             </a>
             <p>${data[index].name}</p>
             <div class="star">${star(data[index].star)}</div>
             <div class="value">R$ ${data[index].price}</div>
             <button class="btn-buy" onclick="source(${data[index].id})">
-                <a target="_blank" href="../shopping/index.html">COMPRAR</a>
+                <a  href="../shopping/index.html">COMPRAR</a>
             </button>
         </div>`
     })
