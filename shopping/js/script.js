@@ -160,7 +160,7 @@ function suggestion(data) {
         section.innerHTML += `
         <div class="book-buy">
             <a href="../shopping/index.html" class="sinopse" target="_blank">
-                <img onclick="source(${data[index].id})" src=".${data[index].image}">
+                <img onclick="source(${data[index].id})" alt="livro" src=".${data[index].image}">
             </a>
             <p>${data[index].name}</p>
             <div class="star">${star(data[index].star)}</div>
