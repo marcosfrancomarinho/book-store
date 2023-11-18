@@ -92,7 +92,7 @@ function createBooks(object) {
         document.querySelector(".content-galery").innerHTML += `
         <div class="book-buy">
             <a href="./shopping/index.html" class="sinopse" target="_blank">
-                <img onclick="source(${data.id})" src="${data.image}">
+                <img onclick="source(${data.id})" src="${data.image}" alt="livros">
             </a>
             <p>${data.name}</p>
             <div class="star">${star(data.star)}</div>
@@ -116,7 +116,7 @@ function createCarousel(object) {
     filter.map((data) => {
         document.querySelector(".content-carousel").innerHTML += `
         <a href="./shopping/index.html" target="_blank">
-            <img onclick="source(${data.id})"
+            <img onclick="source(${data.id})" alt="livros"
         src=${data.image}></a>`
     })
 }
