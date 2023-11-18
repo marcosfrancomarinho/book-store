@@ -96,7 +96,7 @@ function createBooks(object) {
             </a>
             <p>${data.name}</p>
             <div class="star">${star(data.star)}</div>
-            <div class="value">R$ ${data.price}</div>
+            <div class="value">R$ ${(data.price).toFixed(2)}</div>
             <button class="btn-buy" onclick="source(${data.id})">
                 <a target="_blank" href="./shopping/index.html">COMPRAR</a>
             </button>
