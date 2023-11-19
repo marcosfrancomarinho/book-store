@@ -19,14 +19,12 @@ $(window).ready(async () => {
         template({ function: noFound, object, suggestion, header, footer })
     }
 })
-
 async function dataJson() {
     const response = await fetch("../asset/js/main.json")
     if (response.status != 404) {
         return response.json()
     }
 }
-
 function template(obj) {
     const main = document.createElement("main")
     document.body.appendChild(obj.header())
@@ -39,7 +37,14 @@ function template(obj) {
     }
     document.querySelector("main").appendChild(obj.suggestion(obj.object))
 }
-
+function header() {
+    const head = document.createElement("header")
+    head.innerHTML = ` 
+    <div class="icon">
+    <a href="../index.html"><img src="../asset/image/logo.jpg" alt="icon" class="icon"></a>
+    </div>`
+    return head
+}
 function found(element) {
     const section = document.createElement('section')
     section.className = "found-books"
@@ -58,24 +63,12 @@ function found(element) {
     })
     return section
 }
-
 function noFound() {
     const section = document.createElement('section')
     section.className = "no-found-books"
     section.innerHTML += `<div>LIVRO NÃO ECONTRADO</div>`
     return section
 }
-
-
-function star(response) {
-    let icon = ""
-    for (let index = 0; index < response; index++) {
-        icon += "&#11088;"
-    }
-    icon += ` ${response}.0`
-    return icon
-}
-
 function suggestion(data) {
     const quant = 5
     let random = []
@@ -103,13 +96,13 @@ function suggestion(data) {
     })
     return section
 }
-function header() {
-    const head = document.createElement("header")
-    head.innerHTML = ` 
-    <div class="icon">
-    <a href="../index.html"><img src="../asset/image/logo.jpg" alt="icon" class="icon"></a>
-    </div>`
-    return head
+function star(response) {
+    let icon = ""
+    for (let index = 0; index < response; index++) {
+        icon += "&#11088;"
+    }
+    icon += ` ${response}.0`
+    return icon
 }
 function footer() {
     const element = document.createElement("footer")

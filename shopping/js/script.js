@@ -1,11 +1,12 @@
 let object;
 let idx;
+const convert = (value) => `R$ ${(value).toFixed(2).replace(".", ",")}`
 const source = (value) => localStorage.setItem("id", JSON.stringify(value))
 
 $(window).ready(async () => {
-        object = await dataJson()
-        idx = JSON.parse(localStorage.getItem("id"))
-        create(object[idx],object)
+    object = await dataJson()
+    idx = JSON.parse(localStorage.getItem("id"))
+    create(object[idx], object)
 })
 async function dataJson() {
     const response = await fetch("../asset/js/main.json")
@@ -87,9 +88,33 @@ function create(e) {
     document.body.appendChild(footer)
     document.querySelector("main").appendChild(suggestion(object))
 }
-
-const convert = (value) => `R$ ${(value).toFixed(2).replace(".", ",")}`
-
+function suggestion(data) {
+    const section = document.createElement("section")
+    const quant = 5
+    let random = []
+    section.className = "books-sugestions"
+    while (random.length < quant) {
+        let number = Math.floor(Math.random() * data.length)
+        if (random.indexOf(number) == -1 && number != idx) {
+            random.push(number)
+        }
+    }
+    random.map((index) => {
+        section.innerHTML += `
+        <div class="book-buy">
+            <a href="../shopping/index.html" class="sinopse" target="_blank">
+                <img onclick="source(${data[index].id})" alt="livro" src=".${data[index].image}">
+            </a>
+            <p>${data[index].name}</p>
+            <div class="star">${star(data[index].star)}</div>
+            <div class="value">R$ ${data[index].price}</div>
+            <button class="btn-buy" onclick="source(${data[index].id})">
+                <a target="_blank" href="../shopping/index.html">COMPRAR</a>
+            </button>
+        </div>`
+    })
+    return section
+}
 function price(value) {
     const currency = object[idx].price;
     $(".value").html(`R$ ${(currency * value).toFixed(2).replace(".", ",")}`)
@@ -138,7 +163,6 @@ function buy() {
 function closePage() {
     $(".register").hide(100)
 }
-
 function star(response) {
     let icon = ""
     for (let index = 0; index < response; index++) {
@@ -146,31 +170,4 @@ function star(response) {
     }
     icon += ` ${response}.0`
     return icon
-}
-function suggestion(data) {
-    const section = document.createElement("section")
-    const quant = 5
-    let random = []
-    section.className = "books-sugestions"
-    while (random.length < quant) {
-        let number = Math.floor(Math.random() * data.length)
-        if (random.indexOf(number) == -1 && number != idx) {
-            random.push(number)
-        }
-    }
-    random.map((index) => {
-        section.innerHTML += `
-        <div class="book-buy">
-            <a href="../shopping/index.html" class="sinopse" target="_blank">
-                <img onclick="source(${data[index].id})" alt="livro" src=".${data[index].image}">
-            </a>
-            <p>${data[index].name}</p>
-            <div class="star">${star(data[index].star)}</div>
-            <div class="value">R$ ${data[index].price}</div>
-            <button class="btn-buy" onclick="source(${data[index].id})">
-                <a target="_blank" href="../shopping/index.html">COMPRAR</a>
-            </button>
-        </div>`
-    })
-    return section
 }

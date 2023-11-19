@@ -5,12 +5,6 @@ const source = (value) => localStorage.setItem("id", JSON.stringify(value))
 const searchId = (value) => localStorage.setItem("id-search", JSON.stringify(value))
 const width = () => document.querySelector(".content-carousel").children[0].children[0].width + 0.5
 
-$(window).scroll(() => scrollPage())
-$(".material-symbols-outlined").click(() => {
-    $("nav").toggle(500)
-    $("nav").css("display", "flex")
-})
-
 $(window).ready(async () => {
     bookcase = await dataJson()
     createCarousel(bookcase)
@@ -18,28 +12,20 @@ $(window).ready(async () => {
     allBoks(bookcase)
     scrollPage()
 })
-
-$(window).click(() => {
-    $(".all-books").hide(100)
-})
-
 async function dataJson() {
     const response = await fetch("../asset/js/main.json")
     if (response.status != 404) {
         return response.json()
     }
 }
-function carousel() {
-    check()
-    if (innerWidth < 600) {
-        $(".content-carousel").css("transform", `translateX(${-width() * index}px)`)
-    } else if (innerWidth < 1367) {
-        $(".content-carousel").css("transform", `translateX(${-width() * 4.15 * index}px)`)
-    } else if (innerWidth < 1500) {
-        $(".content-carousel").css("transform", `translateX(${-911.281 * index}px)`)
-    } else {
-        $(".content-carousel").css("transform", `translateX(${-1114.620 * index}px)`)
-    }
+function createCarousel(object) {
+    const filter = object.filter((data) => data.carousel == true)
+    filter.map((data) => {
+        document.querySelector(".content-carousel").innerHTML += `
+        <a href="./shopping/index.html" target="_blank">
+            <img onclick="source(${data.id})" alt="livros"
+        src=${data.image}></a>`
+    })
 }
 $(".btn-next").click(() => {
     index++
@@ -69,13 +55,28 @@ function check() {
             index = 0
         }
     }
-
+}
+function carousel() {
+    check()
+    if (innerWidth < 600) {
+        $(".content-carousel").css("transform", `translateX(${-width() * index}px)`)
+    } else if (innerWidth < 1367) {
+        $(".content-carousel").css("transform", `translateX(${-width() * 4.15 * index}px)`)
+    } else if (innerWidth < 1500) {
+        $(".content-carousel").css("transform", `translateX(${-911.281 * index}px)`)
+    } else {
+        $(".content-carousel").css("transform", `translateX(${-1114.620 * index}px)`)
+    }
 }
 const loop = setInterval(() => {
     carousel()
     index++
 }, 5000)
-
+$(window).scroll(() => scrollPage())
+$(".material-symbols-outlined").click(() => {
+    $("nav").toggle(500)
+    $("nav").css("display", "flex")
+})
 function scrollPage() {
     if (innerWidth > 600) {
         if (window.scrollY > 0) {
@@ -94,7 +95,6 @@ function scrollPage() {
         }
     }
 }
-
 function createBooks(object) {
     const filter = object.filter((data) => data.show == true)
     filter.map((data) => {
@@ -120,15 +120,6 @@ function star(response) {
     icon += ` ${response}.0`
     return icon
 }
-function createCarousel(object) {
-    const filter = object.filter((data) => data.carousel == true)
-    filter.map((data) => {
-        document.querySelector(".content-carousel").innerHTML += `
-        <a href="./shopping/index.html" target="_blank">
-            <img onclick="source(${data.id})" alt="livros"
-        src=${data.image}></a>`
-    })
-}
 function allBoks(object) {
     $("#search").focus()
     object.map(data => {
@@ -140,7 +131,6 @@ function allBoks(object) {
         </li>`
     })
 }
-
 function search() {
     let info = document.querySelector("#search")
     info = charset(info.value)
@@ -189,5 +179,7 @@ $(window).keydown(function (e) {
         }
     }
 })
-
+$(window).click(() => {
+    $(".all-books").hide(100)
+})
 

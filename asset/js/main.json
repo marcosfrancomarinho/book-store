@@ -32,8 +32,8 @@
         "show": true,
         "carousel": true,
         "id": 2,
-        "keyword": "livro perfeitamente proibido",
-        "author": "Talitha Kechichian - T M Kechichian"
+        "keyword": "livro perfeitamente proibido - T M Kechichian",
+        "author": "Talitha Kechichian"
     },
     {
         "name": "PODER DO HÁBITO",
@@ -56,8 +56,8 @@
         "show": true,
         "carousel": true,
         "id": 4,
-        "keyword": "livro mindset - livro o mindset",
-        "author": "Carol Dweck - Carol Susan Dweck"
+        "keyword": "livro mindset - livro o mindset - Carol Susan Dweck",
+        "author": "Carol Dweck"
     },
     {
         "name": "ESSENCIALISMO",
@@ -104,8 +104,8 @@
         "show": true,
         "carousel": false,
         "id": 8,
-        "keyword": "livro o principe - livro o principe maquiavel - livro principe maquiavel",
-        "author": "Niccolò Machiavelli - Nicolau Maquiavel "
+        "keyword": "Niccolò Machiavelli - livro o principe - livro o principe maquiavel - livro principe maquiavel",
+        "author": "Nicolau Maquiavel "
     },
     {
         "name": "CASAIS INTELIGENTES ENRIQUECEM JUNTOS",
@@ -128,8 +128,8 @@
         "show": true,
         "carousel": false,
         "id": 10,
-        "keyword": "livro game of thrones - livro guerra dos tronos - livro a guerra dos tronos",
-        "author": "George R. R. Martin - George R R Martin - George RR Martin - George Raymond Richard Martin"
+        "keyword": "George R R Martin - George RR Martin - George Raymond Richard Martin - livro game of thrones - livro guerra dos tronos - livro a guerra dos tronos",
+        "author": "George R. R. Martin"
     },
     {
         "name": "HARRY POTTER",
@@ -140,8 +140,8 @@
         "show": true,
         "carousel": true,
         "id": 11,
-        "keyword": "livro do harry potter - livro harry potter - livro o harry potter",
-        "author": "Jo anne Rowling- J. K. Rowling, Rowli Ng J.K. - J K Rowling, Rowli Ng J K - JK Rowling, Rowli Ng JK"
+        "keyword": "livro do harry potter - livro harry potter - livro o harry potter - J. K. Rowling, Rowli Ng J.K. - J K Rowling, Rowli Ng J K - JK Rowling, Rowli Ng JK",
+        "author": "Jo anne Rowling"
     },
     {
         "name": "LIVROS DOS PORQUÊS",
@@ -176,8 +176,8 @@
         "show": true,
         "carousel": true,
         "id": 14,
-        "keyword": "livro as armas de persuasao 2.0 - livro armas de persuasao 2.0 -livro as armas de persuasao 2",
-        "author": "Robert Cialdini - Robert B. Cialdini - Robert B Cialdini"
+        "keyword": "livro as armas de persuasao 2.0 - livro armas de persuasao 2.0 -livro as armas de persuasao 2 - Robert B. Cialdini - Robert B Cialdini",
+        "author": "Robert Cialdini"
     },
     {
         "name": "SALOMÃO O HOMEM MAIS RICO QUE JÁ EXISTIU",
@@ -188,8 +188,8 @@
         "show": true,
         "carousel": false,
         "id": 15,
-        "keyword": "livro salomao o homem mais rico que ja existiu - livro o salomao o homem mais rico que ja existiu",
-        "author": "Steven K. Scott - Steven K Scott - Steven Scott"
+        "keyword": "livro salomao o homem mais rico que ja existiu - livro o salomao o homem mais rico que ja existiu - Steven K Scott - Steven Scott",
+        "author": "Steven K. Scott"
     },
     {
         "name": "O SEGREDO DA PROSPERIDADE JUDAICA",
@@ -200,8 +200,8 @@
         "show": true,
         "carousel": true,
         "id": 16,
-        "keyword": "livro o segredo da prosperidade judaica -livro segredo judaica - livro segredo da prosperidade judaica ",
-        "author": "Rabino Dor Leon Attar - Dor Leon Attar"
+        "keyword": "livro o segredo da prosperidade judaica -livro segredo judaica - livro segredo da prosperidade judaica - Dor Leon Attar",
+        "author": "Rabino Dor Leon Attar"
     },
     {
         "name": "PEQUENO PRINCIPE",
@@ -212,8 +212,8 @@
         "show": true,
         "carousel": true,
         "id": 17,
-        "keyword": "livro pequeno principe - livro o pequeno principe - livro o menino e a raposa - livro o menino e a rosa - livro menino e a raposa - livro menino e a rosa",
-        "author": "Antoine de Saint-Exupéry - Antoine de SaintExupéry - Antoine de Saint Exupery"
+        "keyword": "livro pequeno principe - livro o pequeno principe - livro o menino e a raposa - livro o menino e a rosa - livro menino e a raposa - livro menino e a rosa - Antoine de SaintExupéry - Antoine de Saint Exupery",
+        "author": "Antoine de Saint-Exupéry"
     },
     {
         "name": "A CORAGEM DE NÃO AGRADAR",
