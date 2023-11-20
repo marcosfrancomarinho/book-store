@@ -193,12 +193,12 @@ button a:visited {
 .btn-carousel {
     display: flex;
     width: 90px;
+    margin-top:10px;
     justify-content: space-between;
 }
 
 .btn-next,
 .btn-back {
-    margin-top:15px;
     font-size: 30px;
     border: none;
     opacity: 0.4;
