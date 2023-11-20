@@ -223,7 +223,7 @@ button a:visited {
 }
 
 .section-container-galery {
-    margin-top: 90px;
+    margin-top: 100px;
     border: 1px solid var(--orange-500);
     width: 90%;
     border-radius: 10px;
