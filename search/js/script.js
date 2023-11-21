@@ -13,10 +13,10 @@ $(window).ready(async () => {
                 }
             })
         })
-        template({ function: found, arr, object, suggestion, header, footer })
+        template({ function: found, arr, object, suggestion})
     }
     else {
-        template({ function: noFound, object, suggestion, header, footer })
+        template({ function: noFound, object, suggestion})
     }
 })
 async function dataJson() {
@@ -26,32 +26,22 @@ async function dataJson() {
     }
 }
 function template(obj) {
-    const main = document.createElement("main")
-    document.body.appendChild(obj.header())
-    document.body.appendChild(main)
-    document.body.appendChild(obj.footer())
+    const main = document.querySelector("main")
     if (obj.function.name == "found") {
-        document.querySelector("main").appendChild(obj.function(obj.arr))
+        main.appendChild(obj.function(obj.arr))
     } else {
-        document.querySelector("main").appendChild(obj.function())
+        main.appendChild(obj.function())
     }
-    document.querySelector("main").appendChild(obj.suggestion(obj.object))
+    main.appendChild(obj.suggestion(obj.object))
 }
-function header() {
-    const head = document.createElement("header")
-    head.innerHTML = ` 
-    <div class="icon">
-    <a href="../index.html"><img src="../asset/image/logo.jpg" alt="icon" class="icon"></a>
-    </div>`
-    return head
-}
+
 function found(element) {
     const section = document.createElement('section')
     section.className = "found-books"
+    section.innerHTML ="<h2>RESULTADOS:</h2>"
     element.map(data => {
         section.innerHTML += `
-        <h2>Resultados</>
-        <div class="container-suggestion">
+        <div class="content-found-books">
             <a href="../shopping/index.html" class="sinopse" >
                 <img onclick="source(${data.id})" alt="Livros" src=".${data.image}">
             </a>
@@ -103,27 +93,4 @@ function star(response) {
     }
     icon += ` ${response}.0`
     return icon
-}
-function footer() {
-    const element = document.createElement("footer")
-    element.innerHTML = `
-        <div class="client">
-            <h3>Antendimento</h3>
-            <a href="">Política de Vendas Trocas e Privacidade</a>
-            <a href="">Termos e Condições de Compra</a>
-            <a href="">Fale Conosco</a>
-        </div>
-        <div class="institution">
-            <h3>Institucional</h3>
-            <a href="">Sobre a Book Store</a>
-            <a href="">Relações com Investidores</a>
-            <a href="">Trabalhe Conosco</a>
-            <a href="">Seja um parceiro</a>
-        </div>
-        <div class="create">
-            <h4> criado por &copy;marcosmarinho</h4>
-            <a href="https://www.instagram.com/_marcosmarinho98/?fbclid=IwAR0NCjNYkOKXB1hlyQIvB9WR_R6dCRBJjpqw5EMG5oM2iRrPD_GKREcejRw">Instagram </a>
-            <a href="https://twitter.com/marcosmarinho98">Twitter </a>
-        </div>`
-    return element
 }
