@@ -183,31 +183,110 @@ label {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50vw;
+    width: 40vw;
     margin: auto;
-    background-color: red;
-    border-radius: 5px;
+    background-color: var(--gray-500);
+    border: 1px solid var(--orange-500);
     padding: 1%;
     display: none;
 }
 
 .location-cep {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    background-color: yellow;
-    width: 70%;
+    background: var(--trasparent);
+    width: 80%;
     padding: 1.5%;
-    align-items: center;
+    align-items: flex-start;
+
+}
+
+.location-cep h3 {
+    color: var(--white-900);
+    font-family: 'Oxanium', sans-serif;
 }
 
 .location-cep input {
     box-sizing: border-box;
     width: 100%;
     padding: 1%;
+    font-family: sans-serif;
+    font-size: 1.1vw;
+    margin: 3px 0;
+    outline: none;
+    border: none;
+    font-family: sans-serif;
+    border-radius: 2px;
+}
+
+.location-cep input[type=number]::-webkit-inner-spin-button,
+.location-cep [type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.closed {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1.5vw;
+    height: 1.5vw;
+    background-color: var(--orange-500);
+    color: var(--white-900);
+    border: none;
+}
+
+.back,
+.next,
+.buy {
+    width: 10vw;
+    outline: none;
+    border: none;
+    padding: 1%;
+    background-color: var(--orange-500);
+    color: var(--white-900);
+    font-family: 'Oxanium', sans-serif;
+    cursor: pointer;
+    opacity: 0.8;
+    margin: 2px;
+    border: 0.1px solid var(--white-900);
+    text-align: center;
+}
+
+.back {
+    background-color: var(--gray-500);
+}
+
+.back:hover,
+.next:hover,
+.buy {
+    opacity: 1;
 }
 
 .personal-registration {
     display: none;
+}
+
+.personal-registration-content input {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    box-sizing: border-box;
+    padding: 1%;
+    font-family: sans-serif;
+    font-size: 1.1vw;
+    margin: 3px 0;
+    outline: none;
+    border: none;
+    font-family: sans-serif;
+    border-radius: 2px;
+}
+
+.personal-registration-content input[type=number]::-webkit-inner-spin-button,
+.personal-registration-content [type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .books-sugestions {
@@ -261,9 +340,11 @@ label {
     min-height: 3vw;
     cursor: pointer;
 }
-.btn-suggestion:hover{
+
+.btn-suggestion:hover {
     opacity: 1;
 }
+
 .btn-suggestion a {
     font-size: 1.5vw;
     color: white;
@@ -273,18 +354,21 @@ label {
 .btn-suggestion a:visited {
     color: white;
 }
+
 .star-suggestion {
     font-size: 1.3vw;
     margin: 10px 0 0 0;
     font-family: 'Oxanium', sans-serif;
 }
-.value-sugestion{
+
+.value-sugestion {
     font-family: 'Oxanium', sans-serif;
     font-size: 2vw;
     margin: 10px 0;
     font-weight: 600;
 }
-.book-buy p{
+
+.book-buy p {
     text-align: center;
     font-size: 1vw;
     font-family: 'Oxanium', sans-serif;

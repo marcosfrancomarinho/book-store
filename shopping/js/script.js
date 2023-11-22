@@ -39,24 +39,26 @@ function create(e) {
             </div>
         </div>
         <div class="register">
+        <button onclick="closePage()" class="closed"> &#128473;</button>
             <div class="location-cep">
-                    <h3>Seu Endereço</h3>
+                    <h3>Informe o Seu Endereço:</h3>
                     <input type="number" name="cep" id="cep" placeholder="CEP" onchange="search(this)">
                     <input type="text" name="street" id="street" placeholder="RUA">
                     <input type="number" name="number" id="number" placeholder="Nº">
                     <input type="text" name="neighborhood" id="neighborhood" placeholder="BAIRRO">
                     <input type="text" name="city" id="city" placeholder="CIDADE">
                     <input type="text" name="state" id="state" placeholder="ESTADO">
-                    <input type="button" value="PRÓXIMO" onclick="next()">
-                    <input type="button" value="&#128473;" onclick="closePage()">
+                    <button class="next" onclick="next()">PRÓXIMO</button>
             </div>
             <div class="personal-registration">
+                <div class="personal-registration-content">
                     <input type="text" name="name" id="name" placeholder="NOME">
-                    <input type="text" name="lastname" id="lastname" placeholder="SOBRENOME">
+                    <input type="email" name="email" id="email" placeholder="EMAIL">
                     <input type="number" name="cpf" id="cpf" placeholder="CPF">
                     <input type="tel" name="phone" id="phone" placeholder="TELEFONE">
-                    <input type="button" value="COMPRAR" onclick="finallyBuy()">
-                    <input type="button" value="&#128473;" onclick="closePage()">
+                    <button class="buy" onclick="finallyBuy()">COMPRAR</button>
+                    <button  class="back" onclick="back()">VOLTAR</button>
+                </div>
             </div>
         </div>`
     document.querySelector("main").appendChild(section)
@@ -141,7 +143,14 @@ function buy() {
     $(".register").show(100)
 }
 function closePage() {
-    $(".register").hide(100)
+    $(".location-cep").show()
+    $(".personal-registration").hide()
+    $(".register").hide()
+    $(".register input").val("")
+}
+function back() {
+    $(".location-cep").show()
+    $(".personal-registration").hide()
 }
 function star(response) {
     let icon = ""
@@ -152,9 +161,9 @@ function star(response) {
     return icon
 }
 $(window).scroll(() => {
-        if (window.scrollY > 0) {
-            $(".icon").hide(400)
-        } else {
-            $(".icon").show()
-        }
+    if (window.scrollY > 0) {
+        $(".icon").hide(400)
+    } else {
+        $(".icon").show()
+    }
 })
