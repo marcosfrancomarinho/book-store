@@ -80,14 +80,14 @@ function suggestion(data) {
     random.map((index) => {
         div.innerHTML += `
             <div class="book-buy">
-                <a href="../shopping/index.html" class="sinopse" target="_blank">
+                <a href="../shopping/index.html" class="sinopse">
                     <img onclick="source(${data[index].id})" alt="livro" src=".${data[index].image}">
                 </a>
                 <p>${data[index].name}</p>
                 <div class="star-suggestion">${star(data[index].star)}</div>
                 <div class="value-sugestion">R$ ${(data[index].price).toFixed(2)}</div>
                 <button class="btn-suggestion" onclick="source(${data[index].id})">
-                    <a target="_blank" href="../shopping/index.html">COMPRAR</a>
+                    <a href="../shopping/index.html">COMPRAR</a>
                 </button>
             </div>`
     })
