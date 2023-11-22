@@ -392,9 +392,6 @@ h4 {
     font-size: 1.8vw;
 }
 
-.info {
-    display: none;
-}
 
 @media screen and (max-width:1367px) {
     .content-carousel a img {

@@ -1,35 +1,31 @@
-    let object;
-    let idx;
-    const convert = (value) => `R$ ${(value).toFixed(2).replace(".", ",")}`
-    const source = (value) => localStorage.setItem("id", JSON.stringify(value))
+let object;
+let idx;
+const convert = (value) => `R$ ${(value).toFixed(2).replace(".", ",")}`
+const source = (value) => localStorage.setItem("id", JSON.stringify(value))
 
-    $(window).ready(async () => {
-        object = await dataJson()
-        idx = JSON.parse(localStorage.getItem("id"))
-        create(object[idx], object)
-    })
-    async function dataJson() {
-        const response = await fetch("../asset/js/main.json")
-        if (response.status != 404) {
-            return response.json()
-        }
+$(window).ready(async () => {
+    object = await dataJson()
+    idx = JSON.parse(localStorage.getItem("id"))
+    create(object[idx], object)
+})
+async function dataJson() {
+    const response = await fetch("../asset/js/main.json")
+    if (response.status != 404) {
+        return response.json()
     }
-    function create(e) {
-        $("title").html(e.name)
-        const header = document.createElement("header")
-        const main = document.createElement('main')
-        const footer = document.createElement('footer')
-        header.innerHTML = ` 
-        <div class="icon">
-            <a href="../index.html"><img src="../asset/image/logo.jpg" alt="icon" class="icon"></a>
-        </div>`
-        main.innerHTML = `
-        <section class="container">
+}
+function create(e) {
+    $("title").html(e.name)
+    const section = document.createElement('section')
+    section.className = "shopping"
+    section.innerHTML = `
+        <div class="container">
             <div class="image">
                     <img src=.${e.image} alt="Livro">
             </div>
             <div class="content">
                     <p class="title">${e.name}</p>
+                    <p class="author">${e.author}</p>
                     <div class="star">${star(e.star)}</div>
                     <div class="value">${convert(e.price)}</div>
                     <div class="content-quant">
@@ -41,8 +37,8 @@
                     <div class="read-more" onclick="readMore()"> &#9660; leia mais</div>
                     <div class="read-less" onclick="readLess()"> &#9650; leia menos</div>
             </div>
-        </section>
-        <section class="register">
+        </div>
+        <div class="register">
             <div class="location-cep">
                     <h3>Seu Endereço</h3>
                     <input type="number" name="cep" id="cep" placeholder="CEP" onchange="search(this)">
@@ -62,112 +58,103 @@
                     <input type="button" value="COMPRAR" onclick="finallyBuy()">
                     <input type="button" value="&#128473;" onclick="closePage()">
             </div>
-        </section>`
-        footer.innerHTML = `
-            <div class="client">
-                    <h3>Antendimento</h3>
-                    <a href="">Política de Vendas Trocas e Privacidade</a>
-                    <a href="">Termos e Condições de Compra</a>
-                    <a href="">Fale Conosco</a>
-            </div>
-            <div class="institution">
-                    <h3>Institucional</h3>
-                    <a href="">Sobre a Book Store</a>
-                    <a href="">Relações com Investidores</a>
-                    <a href="">Trabalhe Conosco</a>
-                    <a href="">Seja um parceiro</a>
-            </div>
-            <div class="create">
-                    <h4> criado por &copy;marcosmarinho</h4>
-                    <a
-                            href="https://www.instagram.c   _marcosmarinho9    fbclid=IwAR0NCjNYkOKXB1hlyQIvB9WR_R6dCRBJjpqw5  5oM2iRrPD_GKREcejRw">Instagram</a>
-                    <a href="https://twitter.com/marcosmarinho98">Twitter</a>
-            </div>`
-        document.body.appendChild(header)
-        document.body.appendChild(main)
-        document.body.appendChild(footer)
-        document.querySelector("main").appendChild(suggestion(object))
-    }
-    function suggestion(data) {
-        const section = document.createElement("section")
-        const quant = 5
-        let random = []
-        section.className = "books-sugestions"
-        while (random.length < quant) {
-            let number = Math.floor(Math.random() * data.length)
-            if (random.indexOf(number) == -1 && number != idx) {
-                random.push(number)
-            }
+        </div>`
+    document.querySelector("main").appendChild(section)
+    document.querySelector("main").appendChild(suggestion(object))
+}
+function suggestion(data) {
+    const div = document.createElement("div")
+    const section = document.createElement("section")
+    const title = document.createElement("h2")
+    const quant = 5
+    let random = []
+    section.className = "books-sugestions"
+    div.className = "books-sugestions-content"
+    while (random.length < quant) {
+        let number = Math.floor(Math.random() * data.length)
+        if (random.indexOf(number) == -1 && number != idx) {
+            random.push(number)
         }
-        random.map((index) => {
-            section.innerHTML += `
+    }
+    title.innerHTML = "você também pode gostar"
+    random.map((index) => {
+        div.innerHTML += `
             <div class="book-buy">
                 <a href="../shopping/index.html" class="sinopse" target="_blank">
                     <img onclick="source(${data[index].id})" alt="livro" src=".${data[index].image}">
                 </a>
                 <p>${data[index].name}</p>
-                <div class="star">${star(data[index].star)}</div>
-                <div class="value">R$ ${data[index].price}</div>
-                <button class="btn-buy" onclick="source(${data[index].id})">
+                <div class="star-suggestion">${star(data[index].star)}</div>
+                <div class="value-sugestion">R$ ${(data[index].price).toFixed(2)}</div>
+                <button class="btn-suggestion" onclick="source(${data[index].id})">
                     <a target="_blank" href="../shopping/index.html">COMPRAR</a>
                 </button>
             </div>`
-        })
-        return section
+    })
+    section.appendChild(title)
+    section.appendChild(div)
+    return section
+}
+function price(value) {
+    const currency = object[idx].price;
+    $(".value").html(`R$ ${(currency * value).toFixed(2).replace(".", ",")}`)
+}
+function readMore() {
+    $(".read-more").hide()
+    $(".read-less").show()
+    $(".info").html(object[idx].content)
+}
+function readLess() {
+    $(".read-more").show()
+    $(".read-less").hide()
+    $(".info").html(`${object[idx].content.slice(0, 200)}...`)
+}
+async function api(cep) {
+    const url = `https://brasilapi.com.br/api/cep/v1/${cep}`
+    const response = await fetch(url)
+    if (response.status == 200) {
+        return response.json()
+    } else {
+        return null
     }
-    function price(value) {
-        const currency = object[idx].price;
-        $(".value").html(`R$ ${(currency * value).toFixed(2).replace(".", ",")}`)
+}
+async function search(element) {
+    const location = await api(element.value)
+    if (location == null) {
+        $("#street").val("")
+        $("#neighborhood").val("")
+        $("#city").val("")
+        $("#state").val("")
+        alert("CEP NÃO ECONTRADO")
+    } else {
+        $("#street").val(location.street)
+        $("#neighborhood").val(location.neighborhood)
+        $("#city").val(location.city)
+        $("#state").val(location.state)
     }
-    function readMore() {
-        $(".read-more").hide()
-        $(".read-less").show()
-        $(".info").html(object[idx].content)
+}
+function next() {
+    $(".location-cep").hide(100)
+    $(".personal-registration").show(100)
+}
+function buy() {
+    $(".register").show(100)
+}
+function closePage() {
+    $(".register").hide(100)
+}
+function star(response) {
+    let icon = ""
+    for (let index = 0; index < response; index++) {
+        icon += "&#11088;"
     }
-    function readLess() {
-        $(".read-more").show()
-        $(".read-less").hide()
-        $(".info").html(`${object[idx].content.slice(0, 200)}...`)
-    }
-    async function api(cep) {
-        const url = `https://brasilapi.com.br/api/cep/v1/${cep}`
-        const response = await fetch(url)
-        if (response.status == 200) {
-            return response.json()
+    icon += ` ${response}.0`
+    return icon
+}
+$(window).scroll(() => {
+        if (window.scrollY > 0) {
+            $(".icon").hide(400)
         } else {
-            return null
+            $(".icon").show()
         }
-    }
-    async function search(element) {
-        const location = await api(element.value)
-        if (location == null) {
-            $("#street").val("")
-            $("#neighborhood").val("")
-            $("#city").val("")
-            $("#state").val("")
-            alert("CEP NÃO ECONTRADO")
-        } else {
-            $("#street").val(location.street)
-            $("#neighborhood").val(location.neighborhood)
-            $("#city").val(location.city)
-            $("#state").val(location.state)
-        }
-    }
-    function next() {
-        $(".location-cep").hide(100)
-        $(".personal-registration").show(100)
-    }
-    function buy() {
-        $(".register").show(100)
-    }
-    function closePage() {
-        $(".register").hide(100)
-    }
-    function star(response) {
-        let icon = ""
-        for (let index = 0; index < response; index++) {
-            icon += "&#11088;"
-        }
-        icon += ` ${response}.0`
-        return icon
-    }
+})

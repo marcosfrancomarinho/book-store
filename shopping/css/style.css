@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@800&display=swap');
+
 * {
     padding: 0;
     box-sizing: border-box;
@@ -29,6 +31,9 @@ body {
 
 header {
     display: flex;
+    z-index: 1;
+    position: sticky;
+    top: 0;
     width: 80vw;
     background-color: var(--black-900);
     margin: auto;
@@ -39,23 +44,29 @@ header {
 }
 
 .icon {
-    width: 13%;
+    width: 15%;
 }
 
 .icon img {
     width: 100%;
 }
 
+.shopping {
+    display: flex;
+    width: 80vw;
+    margin: auto;
+}
+
 .container {
     margin: auto;
     display: flex;
-    width: 80vw;
+    width: 100%;
     color: var(--white-900);
     background-color: var(--black-900);
     padding: 1.5%;
     align-items: start;
     justify-content: space-evenly;
-    min-height: 80vh;
+    min-height: 70vh;
 }
 
 .content {
@@ -67,6 +78,7 @@ header {
 }
 
 .title {
+    font-family: 'Oxanium', sans-serif;
     font-size: 2vw;
     text-transform: uppercase;
     margin: 10px 0 0 0;
@@ -89,6 +101,7 @@ header {
 
 label {
     font-weight: 600;
+    font-family: 'Oxanium', sans-serif;
 }
 
 .star {
@@ -97,12 +110,14 @@ label {
 }
 
 .value {
+    font-family: 'Oxanium', sans-serif;
     font-size: 2vw;
     margin: 10px 0;
     font-weight: 600;
 }
 
 .btn-buy {
+    font-family: 'Oxanium', sans-serif;
     padding: 1%;
     width: 15%;
     outline: none;
@@ -133,26 +148,26 @@ label {
     margin-top: 20px;
     text-align: justify;
     overflow: hidden;
+    font-style: italic;
 }
 
 .read-less {
+    font-family: 'Oxanium', sans-serif;
     width: 100%;
     margin: 10px 0 0 0;
     display: none;
     text-transform: capitalize;
     cursor: pointer;
-    border-bottom: 1px solid var(--white-900);
     opacity: 0.7;
 }
 
 .read-more {
+    font-family: 'Oxanium', sans-serif;
     width: 100%;
     margin: 10px 0 0 0;
     text-transform: capitalize;
     cursor: pointer;
     opacity: 0.7;
-    border-bottom: 1px solid var(--white-900);
-
 }
 
 .read-less:hover,
@@ -162,7 +177,8 @@ label {
 }
 
 .register {
-    position: absolute;
+    position: fixed;
+    z-index: 1;
     min-height: 200px;
     top: 50%;
     left: 50%;
@@ -181,7 +197,6 @@ label {
     background-color: yellow;
     width: 70%;
     padding: 1.5%;
-    row-gap: 5px;
     align-items: center;
 }
 
@@ -193,4 +208,125 @@ label {
 
 .personal-registration {
     display: none;
+}
+
+.books-sugestions {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    background-color: var(--black-900);
+    color: var(--white-900);
+    gap: 1%;
+}
+
+.books-sugestions h2 {
+    font-size: 2vw;
+    text-transform: uppercase;
+    font-family: 'Oxanium', sans-serif;
+    margin: 10px 0 0 0;
+    font-weight: 900;
+    text-align: center;
+}
+
+.books-sugestions-content {
+    display: flex;
+    padding: 1%;
+    justify-content: space-around;
+    gap: 0.5%;
+}
+
+.book-buy {
+    width: 16vw;
+    min-height: 13vw;
+    background: linear-gradient(to bottom, var(--black-900), var(--gray-500));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1%;
+}
+
+.sinopse img {
+    width: 100%;
+    height: 18vw;
+}
+
+.btn-suggestion {
+    background-color: var(--orange-500);
+    border: none;
+    box-shadow: var(--shadow-box);
+    opacity: 0.7;
+    width: 85%;
+    min-height: 3vw;
+    cursor: pointer;
+}
+.btn-suggestion:hover{
+    opacity: 1;
+}
+.btn-suggestion a {
+    font-size: 1.5vw;
+    color: white;
+    font-family: 'Oxanium', sans-serif;
+}
+
+.btn-suggestion a:visited {
+    color: white;
+}
+.star-suggestion {
+    font-size: 1.3vw;
+    margin: 10px 0 0 0;
+    font-family: 'Oxanium', sans-serif;
+}
+.value-sugestion{
+    font-family: 'Oxanium', sans-serif;
+    font-size: 2vw;
+    margin: 10px 0;
+    font-weight: 600;
+}
+.book-buy p{
+    text-align: center;
+    font-size: 1vw;
+    font-family: 'Oxanium', sans-serif;
+}
+
+footer {
+    width: 80vw;
+    margin: auto;
+    background-color: var(--black-900);
+    display: flex;
+    justify-content: space-around;
+    height: 20vw;
+    align-items: center;
+}
+
+.client,
+.institution,
+.create {
+    gap: 1vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--white-900);
+}
+
+.client a,
+.institution a,
+.create a {
+    font-family: 'Oxanium', sans-serif;
+    color: var(--white-900);
+    font-size: 1.2vw;
+}
+
+.client h3,
+.institution h3 {
+    font-family: 'Oxanium', sans-serif;
+    color: var(--white-900);
+    font-size: 1.8vw;
+}
+
+h4 {
+    font-family: 'Oxanium', sans-serif;
+    color: var(--white-900);
+    font-size: 1.8vw;
 }
