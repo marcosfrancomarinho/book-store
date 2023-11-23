@@ -22,7 +22,7 @@ html {
     --black-900: #000000;
     --shadow-box: inset 0px 0px 0 1px var(--white-900);
     --trasparent: transparent;
-    --shadow-letter: 1px 1.5px rgb(196, 69, 23), 2px 1.5px var(--black-900);
+    --shadow-letter: 1px 1.5px var(--orange-500), 2px 1.5px var(--black-900);
 }
 
 body {
