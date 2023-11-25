@@ -486,15 +486,17 @@ h4 {
 
     .image {
         margin-top: 10px;
-        width: 65%;
-        height: 85vw;
-        padding: 5px;
+        width: 70%;
+        height: 90vw;
+        margin: 5px; 
+        box-shadow: var(--shadow-box);
     }
 
     .image img {
         width: 100%;
         height: 100%;
         margin-left: 05px;
+        
     }
 
     .info {
