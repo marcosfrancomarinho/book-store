@@ -173,7 +173,7 @@ $(window).keydown(function (e) {
                 open("./search/index.html")
                 $(".all-books").hide(100)
             } else {
-                searchId({ status: "error", type: 404 })
+                searchId(404)
                 open("./search/index.html")
                 $(".all-books").css("display", "none")
                 input.value = ""
