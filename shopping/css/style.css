@@ -451,12 +451,12 @@ h4 {
     }
 
     .content-quant {
-        margin: 5px 0;
+        margin: 8px 0;
     }
 
     #quant {
-        width: 15vw;
-        font-size: 3vw;
+        width: 16vw;
+        font-size: 3.5vw;
     }
 
     .author {
@@ -464,23 +464,23 @@ h4 {
     }
 
     label {
-        font-size: 4vw;
+        font-size: 4.5vw;
     }
 
     .star {
         margin: 0;
-        font-size: 3vw;
+        font-size: 3.5vw;
     }
 
     .value {
-        font-size: 4.2vw;
+        font-size: 5vw;
         margin: 0;
     }
 
     .btn-buy {
         padding: 5px;
-        width: 40%;
-        font-size: 3.5vw;
+        width: 50%;
+        font-size: 4vw;
         margin: 5px;
     }
 
