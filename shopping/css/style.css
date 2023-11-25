@@ -422,9 +422,10 @@ h4 {
 }
 
 @media screen and (max-width:600px) {
-    body{
+    body {
         background-color: var(--black-900);
     }
+
     header {
         width: 100%;
     }
@@ -543,7 +544,7 @@ h4 {
     }
 
     .personal-registration-content input {
-        width: 90%;
+        width: 99%;
         font-size: 5vw;
     }
 
@@ -574,7 +575,7 @@ h4 {
     }
 
     .sinopse img {
-        height:80vw;
+        height: 80vw;
     }
 
     .btn-suggestion {
