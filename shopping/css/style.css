@@ -422,6 +422,9 @@ h4 {
 }
 
 @media screen and (max-width:600px) {
+    body{
+        background-color: var(--black-900);
+    }
     header {
         width: 100%;
     }
@@ -517,7 +520,7 @@ h4 {
 
     .location-cep input {
         width: 100%;
-        font-size: 3vw;
+        font-size: 5vw;
     }
 
 
@@ -541,7 +544,7 @@ h4 {
 
     .personal-registration-content input {
         width: 90%;
-        font-size: 3vw;
+        font-size: 5vw;
     }
 
     .personal-registration-content h3 {
@@ -553,52 +556,58 @@ h4 {
     }
 
     .books-sugestions h2 {
-        font-size: 5vw;
+        font-size: 6vw;
+        margin: 5px;
     }
 
     .books-sugestions-content {
         width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 10px;
     }
 
     .book-buy {
-        width: 30vw;
-        min-height: 40vw;
-        justify-content: space-between;
+        min-width: 80vw;
+        min-height: 80vw;
+        justify-content: space-betweaen;
     }
 
     .sinopse img {
-        height: 25vw;
+        height:80vw;
     }
 
     .btn-suggestion {
         opacity: 1;
-        width: 95%;
+        width: 75%;
         min-height: 3vw;
         padding: 3px;
+        margin: 3px 0;
     }
 
     .btn-suggestion a {
-        font-size: 2.5vw;
+        font-size: 4.5vw;
         font-weight: 600;
     }
 
     .star-suggestion {
-        font-size: 2vw;
+        font-size: 3vw;
         margin: 0;
     }
 
     .value-sugestion {
-        font-size: 3vw;
+        font-size: 5vw;
         margin: 5px 0;
         font-weight: 600;
     }
 
     .book-buy p {
         text-align: center;
-        font-size: 2vw;
+        font-size: 4.5vw;
     }
 
     footer {
+        margin-top: 20px;
         width: 100%;
         flex-direction: column;
         justify-content: flex-start;

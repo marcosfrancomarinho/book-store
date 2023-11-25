@@ -39,7 +39,7 @@ function create(e) {
             </div>
         </div>
         <div class="register">
-        <button onclick="closePage()" class="closed"> &#128473;</button>
+        <button onclick="closePage()" class="closed">X</button>
             <div class="location-cep">
                     <h3>Informe o Seu Endereço:</h3>
                     <input type="number" name="cep" id="cep" placeholder="CEP" onchange="search(this)">
