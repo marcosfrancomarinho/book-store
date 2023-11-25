@@ -235,6 +235,7 @@ label {
     background-color: var(--orange-500);
     color: var(--white-900);
     border: none;
+    font-size: 1vw;
 }
 
 .back,
@@ -281,6 +282,11 @@ label {
     border: none;
     font-family: sans-serif;
     border-radius: 2px;
+}
+
+.personal-registration-content h3 {
+    color: var(--white-900);
+    font-family: 'Oxanium', sans-serif;
 }
 
 .personal-registration-content input[type=number]::-webkit-inner-spin-button,
@@ -413,4 +419,212 @@ h4 {
     font-family: 'Oxanium', sans-serif;
     color: var(--white-900);
     font-size: 1.8vw;
+}
+
+@media screen and (max-width:600px) {
+    header {
+        width: 100%;
+    }
+
+    .icon {
+        width: 30%;
+    }
+
+    .shopping {
+        width: 100%;
+    }
+
+    .container {
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+
+    .title {
+        font-size: 5vw;
+    }
+
+    .content-quant {
+        margin: 5px 0;
+    }
+
+    #quant {
+        width: 15vw;
+        font-size: 3vw;
+    }
+
+    .author {
+        font-size: 3vw;
+    }
+
+    label {
+        font-size: 4vw;
+    }
+
+    .star {
+        margin: 0;
+        font-size: 3vw;
+    }
+
+    .value {
+        font-size: 4.2vw;
+        margin: 0;
+    }
+
+    .btn-buy {
+        padding: 5px;
+        width: 40%;
+        font-size: 3.5vw;
+        margin: 5px;
+    }
+
+    .image {
+        margin-top: 10px;
+        width: 80vw;
+        height: 110vw;
+    }
+
+    .image img {
+        width: 80vw;
+        height: 100%;
+        margin-left: 05px;
+    }
+
+    .info {
+        width: 99%;
+        font-size: 4vw;
+    }
+
+    .read-less,
+    .read-more {
+        font-size: 3vw;
+        opacity: 1;
+    }
+
+    .register {
+        width: 90%;
+        min-height: 20vh;
+
+    }
+
+    .location-cep {
+        width: 100%;
+    }
+
+    .location-cep h3 {
+        font-size: 4vw;
+    }
+
+    .location-cep input {
+        width: 100%;
+        font-size: 3vw;
+    }
+
+
+    .closed {
+        font-size: 3vw;
+        width: 5vw;
+        height: 6vw;
+    }
+
+    .back,
+    .next,
+    .buy {
+        width: 20vw;
+        font-size: 3vw;
+    }
+
+    .personal-registration {
+        display: none;
+        width: 100%;
+    }
+
+    .personal-registration-content input {
+        width: 90%;
+        font-size: 3vw;
+    }
+
+    .personal-registration-content h3 {
+        font-size: 4vw;
+    }
+
+    .books-sugestions {
+        width: 100%;
+    }
+
+    .books-sugestions h2 {
+        font-size: 5vw;
+    }
+
+    .books-sugestions-content {
+        width: 100%;
+    }
+
+    .book-buy {
+        width: 30vw;
+        min-height: 40vw;
+        justify-content: space-between;
+    }
+
+    .sinopse img {
+        height: 25vw;
+    }
+
+    .btn-suggestion {
+        opacity: 1;
+        width: 95%;
+        min-height: 3vw;
+        padding: 3px;
+    }
+
+    .btn-suggestion a {
+        font-size: 2.5vw;
+        font-weight: 600;
+    }
+
+    .star-suggestion {
+        font-size: 2vw;
+        margin: 0;
+    }
+
+    .value-sugestion {
+        font-size: 3vw;
+        margin: 5px 0;
+        font-weight: 600;
+    }
+
+    .book-buy p {
+        text-align: center;
+        font-size: 2vw;
+    }
+
+    footer {
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 100vw;
+    }
+
+    .client,
+    .institution,
+    .create {
+        gap: 2vw;
+        margin: 10px 0;
+    }
+
+    .client a,
+    .institution a,
+    .create a {
+        font-size: 3.5vw;
+    }
+
+    .client h3,
+    .institution h3 {
+        font-size: 4vw;
+    }
+
+    h4 {
+        font-size: 4vw;
+    }
+
 }

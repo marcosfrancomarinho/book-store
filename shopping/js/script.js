@@ -52,6 +52,7 @@ function create(e) {
             </div>
             <div class="personal-registration">
                 <div class="personal-registration-content">
+                    <h3>Dados Pessoais:</h3>
                     <input type="text" name="name" id="name" placeholder="NOME">
                     <input type="email" name="email" id="email" placeholder="EMAIL">
                     <input type="number" name="cpf" id="cpf" placeholder="CPF">
