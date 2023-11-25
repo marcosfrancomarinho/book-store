@@ -442,7 +442,7 @@ h4 {
 
     .container {
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: start;
 
     }
 
@@ -486,8 +486,9 @@ h4 {
 
     .image {
         margin-top: 10px;
-        width: 90%;
-        height: 115vw;
+        width: 65%;
+        height: 85vw;
+        padding: 5px;
     }
 
     .image img {
