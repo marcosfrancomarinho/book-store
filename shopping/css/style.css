@@ -364,15 +364,15 @@ label {
 }
 
 .star-suggestion {
-    font-size: 1.3vw;
-    margin: 10px 0 0 0;
+    font-size: 1.2vw;
+    margin: 5px 0 0 0;
     font-family: 'Oxanium', sans-serif;
 }
 
 .value-sugestion {
     font-family: 'Oxanium', sans-serif;
-    font-size: 2vw;
-    margin: 10px 0;
+    font-size: 1.4vw;
+    margin: 4px 0;
     font-weight: 600;
 }
 
