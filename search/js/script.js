@@ -13,10 +13,10 @@ $(window).ready(async () => {
                 }
             })
         })
-        template({ function: found, arr, object, suggestion})
+        template({ function: found, arr, object, suggestion })
     }
     else {
-        template({ function: noFound, object, suggestion})
+        template({ function: noFound, object, suggestion })
     }
 })
 async function dataJson() {
@@ -36,18 +36,24 @@ function template(obj) {
 }
 
 function found(element) {
+    const search = JSON.parse(localStorage.getItem("value-search"))
     const section = document.createElement('section')
     section.className = "found-books"
-    section.innerHTML ="<h2>RESULTADOS:</h2>"
+    section.innerHTML = `<h2>RESULTADOS: <span> ${search}</span> </h2>`
     element.map(data => {
         section.innerHTML += `
         <div class="content-found-books">
-            <a href="../shopping/index.html" class="sinopse" >
-                <img onclick="source(${data.id})" alt="Livros" src=".${data.image}">
-            </a>
-            <p>${data.name}</p>
-            <div class="star">${star(data.star)}</div>
-            <div class="value">R$ ${data.price}</div>
+            <div class="image-found">
+                <a href="../shopping/index.html" >
+                    <img onclick="source(${data.id})" alt="Livros" src=".${data.image}">
+                </a>
+            </div>
+                <div class="content-found">
+                <p>${data.name}</p>
+                <div class="star">${star(data.star)}</div>
+                <div class="value">R$ ${data.price}</div>
+                <p>${(data.content).slice(0, 300)}...</p>
+            <div>
         </div>
         `
     })
@@ -60,30 +66,36 @@ function noFound() {
     return section
 }
 function suggestion(data) {
+    const div = document.createElement("div")
+    const section = document.createElement("section")
+    const title = document.createElement("h2")
     const quant = 5
     let random = []
-    const section = document.createElement("section")
     section.className = "books-sugestions"
+    div.className = "books-sugestions-content"
     while (random.length < quant) {
         let number = Math.floor(Math.random() * data.length)
         if (random.indexOf(number) == -1) {
             random.push(number)
         }
     }
+    title.innerHTML = "você também pode gostar"
     random.map((index) => {
-        section.innerHTML += `
-        <div class="book-buy">
-            <a href="../shopping/index.html" class="sinopse" >
-                <img onclick="source(${data[index].id})" alt="livros" src=".${data[index].image}">
-            </a>
-            <p>${data[index].name}</p>
-            <div class="star">${star(data[index].star)}</div>
-            <div class="value">R$ ${data[index].price}</div>
-            <button class="btn-buy" onclick="source(${data[index].id})">
-                <a  href="../shopping/index.html">COMPRAR</a>
-            </button>
-        </div>`
+        div.innerHTML += `
+            <div class="book-buy">
+                <a href="../shopping/index.html" class="sinopse">
+                    <img onclick="source(${data[index].id})" alt="livro" src=".${data[index].image}">
+                </a>
+                <p>${data[index].name}</p>
+                <div class="star-suggestion">${star(data[index].star)}</div>
+                <div class="value-sugestion">R$ ${(data[index].price).toFixed(2)}</div>
+                <button class="btn-suggestion" onclick="source(${data[index].id})">
+                    <a href="../shopping/index.html">COMPRAR</a>
+                </button>
+            </div>`
     })
+    section.appendChild(title)
+    section.appendChild(div)
     return section
 }
 function star(response) {
@@ -94,3 +106,10 @@ function star(response) {
     icon += ` ${response}.0`
     return icon
 }
+$(window).scroll(() => {
+    if (window.scrollY > 0) {
+        $(".icon").hide(400)
+    } else {
+        $(".icon").show()
+    }
+})

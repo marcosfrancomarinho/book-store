@@ -66,7 +66,6 @@ header {
     padding: 1.5%;
     align-items: start;
     justify-content: space-evenly;
-    min-height: 70vh;
 }
 
 .content {
@@ -149,6 +148,7 @@ label {
     text-align: justify;
     overflow: hidden;
     font-style: italic;
+    font-size: 1.1vw;
 }
 
 .read-less {
@@ -159,6 +159,7 @@ label {
     text-transform: capitalize;
     cursor: pointer;
     opacity: 0.7;
+    font-size: 1vw;
 }
 
 .read-more {
@@ -168,6 +169,7 @@ label {
     text-transform: capitalize;
     cursor: pointer;
     opacity: 0.7;
+    font-size: 1vw
 }
 
 .read-less:hover,
@@ -524,7 +526,6 @@ h4 {
         font-size: 5vw;
     }
 
-
     .closed {
         font-size: 3vw;
         width: 5vw;
@@ -554,11 +555,12 @@ h4 {
 
     .books-sugestions {
         width: 100%;
+        border-top: 1px solid var(--orange-500);
     }
 
     .books-sugestions h2 {
-        font-size: 6vw;
-        margin: 5px;
+        font-size: 5vw;
+        margin: 25px 0;
     }
 
     .books-sugestions-content {
@@ -572,6 +574,8 @@ h4 {
         min-width: 80vw;
         min-height: 80vw;
         justify-content: space-betweaen;
+        background: linear-gradient(to top, var(--black-900), var(--gray-500), var(--black-900));
+        border: 0.05px solid var(--gray-500);
     }
 
     .sinopse img {
@@ -580,8 +584,8 @@ h4 {
 
     .btn-suggestion {
         opacity: 1;
-        width: 75%;
-        min-height: 5vw;
+        width: 60%;
+        min-height: 8vw;
         padding: 3px;
         margin: 3px 0;
     }

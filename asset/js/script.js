@@ -3,6 +3,7 @@ let bookcase;
 const charset = str => (str.normalize("NFD").replace(/[^a-zA-Z\s]/g, "")).toLowerCase()
 const source = (value) => localStorage.setItem("id", JSON.stringify(value))
 const searchId = (value) => localStorage.setItem("id-search", JSON.stringify(value))
+const setValue = (value) => localStorage.setItem("value-search", JSON.stringify(value))
 const width = () => document.querySelector(".content-carousel").children[0].children[0].width + 0.5
 
 $(window).ready(async () => {
@@ -160,6 +161,7 @@ $(window).keydown(function (e) {
                 const keyword = charset(data.keyword)
                 const content = charset(data.content)
                 const value = charset(input.value)
+                setValue(value)
                 if (name.includes(value) || content.includes(value) || keyword.includes(value) || author.includes(value)) {
                     return data
                 }
