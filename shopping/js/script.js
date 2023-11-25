@@ -57,7 +57,7 @@ function create(e) {
                     <input type="email" name="email" id="email" placeholder="EMAIL">
                     <input type="number" name="cpf" id="cpf" placeholder="CPF">
                     <input type="tel" name="phone" id="phone" placeholder="TELEFONE">
-                    <button class="buy" onclick="finallyBuy()">COMPRAR</button>
+                    <button class="buy">COMPRAR</button>
                     <button  class="back" onclick="back()">VOLTAR</button>
                 </div>
             </div>
@@ -168,3 +168,14 @@ $(window).scroll(() => {
         $(".icon").show()
     }
 })
+
+function weather() {
+    const time = new Date().getHours()
+    if (time < 6) {
+        return "Bom dia"
+    } else if (time >= 12) {
+        return "Boa Tarde"
+    } else {
+        return "Boa Noite"
+    }
+}

@@ -184,4 +184,3 @@ $(window).keydown(function (e) {
 $(window).click(() => {
     $(".all-books").hide(100)
 })
-
