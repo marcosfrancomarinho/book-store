@@ -279,9 +279,11 @@ h4 {
     .icon {
         width: 30%;
     }
-    .no-found-books{
+
+    .no-found-books {
         width: 100%;
     }
+
     .no-found-books p {
         font-size: 4vw;
     }
@@ -328,8 +330,6 @@ h4 {
         width: 100%;
         height: 100%;
     }
-
-
 
     .books-sugestions {
         width: 100%;
@@ -386,7 +386,7 @@ h4 {
 
     .book-buy p {
         text-align: center;
-        font-size: 4.5vw;
+        font-size: 3.1vw;
     }
 
     footer {
