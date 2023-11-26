@@ -94,6 +94,7 @@ header {
 
 .star {
     font-size: 1.1vw;
+    font-family: 'Oxanium', sans-serif;
 }
 
 .value {
@@ -242,4 +243,153 @@ h4 {
     color: var(--white-900);
     font-size: 1.8vw;
     font-family: 'Oxanium', sans-serif;
+}
+
+
+@media screen and (max-width:600px) {
+    body {
+        background-color: var(--black-900);
+    }
+
+    header {
+        width: 100%;
+    }
+
+    .icon {
+        width: 30%;
+    }
+
+    .found-books {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 2.2vw;
+    }
+
+    .title span {
+        font-size: 2.2vw;
+    }
+
+    .title-book {
+        font-size: 2.4vw;
+    }
+
+    .author-book {
+        font-size: 1.7vw;
+    }
+
+    .star {
+        font-size: 1.5vw;
+    }
+
+    .value {
+        font-size: 2vw;
+        margin: 3px 0;
+    }
+
+    .content-book {
+        font-size: 1.8vw;
+    }
+
+    .image-found {
+        width: 50vw;
+        height: 30vw;
+    }
+
+    .image-found a img {
+        width: 100%;
+        height: 100%;
+    }
+
+
+
+    .books-sugestions {
+        width: 100%;
+        border-top: 1px solid var(--orange-500);
+    }
+
+    .books-sugestions h2 {
+        font-size: 5vw;
+        margin: 10px 0;
+    }
+
+    .books-sugestions-content {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 10px;
+    }
+
+    .book-buy {
+        min-width: 80vw;
+        min-height: 80vw;
+        justify-content: space-betweaen;
+        background: linear-gradient(to top, var(--black-900), var(--gray-500), var(--black-900));
+        border: 0.05px solid var(--gray-500);
+    }
+
+    .sinopse img {
+        height: 80vw;
+    }
+
+    .btn-suggestion {
+        opacity: 1;
+        width: 60%;
+        min-height: 8vw;
+        padding: 3px;
+        margin: 3px 0;
+    }
+
+    .btn-suggestion a {
+        font-size: 4.5vw;
+        font-weight: 600;
+    }
+
+    .star-suggestion {
+        font-size: 3vw;
+        margin: 0;
+    }
+
+    .value-sugestion {
+        font-size: 5vw;
+        margin: 5px 0;
+        font-weight: 600;
+    }
+
+    .book-buy p {
+        text-align: center;
+        font-size: 4.5vw;
+    }
+
+    footer {
+        margin-top: 20px;
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 100vw;
+    }
+
+    .client,
+    .institution,
+    .create {
+        gap: 2vw;
+        margin: 10px 0;
+    }
+
+    .client a,
+    .institution a,
+    .create a {
+        font-size: 3.5vw;
+    }
+
+    .client h3,
+    .institution h3 {
+        font-size: 4vw;
+    }
+
+    h4 {
+        font-size: 4vw;
+    }
+
 }
