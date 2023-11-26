@@ -39,7 +39,7 @@ function found(element) {
     const search = JSON.parse(localStorage.getItem("value-search"))
     const section = document.createElement('section')
     section.className = "found-books"
-    section.innerHTML = `<h2>RESULTADOS: <span> ${search}</span> </h2>`
+    section.innerHTML = `<h2 class="title"> RESULTADOS: <span> ${search}</span> </h2>`
     element.map(data => {
         section.innerHTML += `
         <div class="content-found-books">
@@ -49,10 +49,11 @@ function found(element) {
                 </a>
             </div>
                 <div class="content-found">
-                <p>${data.name}</p>
+                <p class="title-book">${data.name}</p>
+                <p class="author-book">${data.author}</p>
                 <div class="star">${star(data.star)}</div>
-                <div class="value">R$ ${data.price}</div>
-                <p>${(data.content).slice(0, 300)}...</p>
+                <div class="value">R$ ${(data.price).toFixed(2)}</div>
+                <p class="content-book">${(data.content).slice(0, 200)}...</p>
             <div>
         </div>
         `

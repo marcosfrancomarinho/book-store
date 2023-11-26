@@ -50,26 +50,73 @@ header {
 .icon img {
     width: 100%;
 }
-.found-books{
+
+.found-books {
     width: 80vw;
     display: flex;
     flex-direction: column;
     margin: auto;
     background-color: var(--black-900);
-    color:var(--white-900);
+    color: var(--white-900);
 }
-.content-found-books{
+
+.content-found-books {
     display: flex;
     align-items: flex-end;
+    margin: 10px;
+    column-gap: 8px;
+    border: 1px solid var(--gray-500);
+    padding: 5px;
 }
-.image-found{
-    width: 30vw;
-    height: 20vw;
+
+.title {
+    font-family: 'Oxanium', sans-serif;
+    font-size: 1.7vw;
+    margin: 5px 10px;
 }
+
+.title span {
+    font-family: 'Oxanium', sans-serif;
+    text-transform: uppercase;
+    color: var(--orange-500);
+    font-style: italic;
+    font-size: 1.7vw;
+}
+
+.title-book {
+    font-family: 'Oxanium', sans-serif;
+    font-size: 1.6vw;
+}
+
+.author-book {
+    font-size: 1.2vw;
+}
+
+.star {
+    font-size: 1.1vw;
+}
+
+.value {
+    font-family: 'Oxanium', sans-serif;
+    font-size: 1.5vw;
+    margin: 5px 0;
+}
+
+.content-book {
+    font-size: 1.2vw;
+    font-style: italic;
+}
+
+.image-found {
+    width: 20vw;
+    height: 18vw;
+}
+
 .image-found a img {
     width: 100%;
     height: 100%;
 }
+
 .books-sugestions {
     margin: auto;
     display: flex;
@@ -155,6 +202,7 @@ header {
     font-family: 'Oxanium', sans-serif;
 }
 
+
 footer {
     width: 80vw;
     margin: auto;
@@ -178,20 +226,20 @@ footer {
 .client a,
 .institution a,
 .create a {
-    font-family: 'Oxanium', sans-serif;
     color: var(--white-900);
     font-size: 1.2vw;
+    font-family: 'Oxanium', sans-serif;
 }
 
 .client h3,
 .institution h3 {
-    font-family: 'Oxanium', sans-serif;
     color: var(--white-900);
     font-size: 1.8vw;
+    font-family: 'Oxanium', sans-serif;
 }
 
 h4 {
-    font-family: 'Oxanium', sans-serif;
     color: var(--white-900);
     font-size: 1.8vw;
+    font-family: 'Oxanium', sans-serif;
 }
