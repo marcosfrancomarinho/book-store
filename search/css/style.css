@@ -92,7 +92,7 @@ header {
 
 .title {
     font-family: 'Oxanium', sans-serif;
-    font-size: 1.7vw;
+    font-size: 1.4vw;
     margin: 5px 10px;
 }
 
@@ -101,7 +101,7 @@ header {
     text-transform: uppercase;
     color: var(--orange-500);
     font-style: italic;
-    font-size: 1.7vw;
+    font-size: 1.4vw;
 }
 
 .title-book {
@@ -291,15 +291,15 @@ h4 {
     }
 
     .title {
-        font-size: 4vw;
+        font-size: 3vw;
     }
 
     .title span {
-        font-size: 4vw;
+        font-size: 3vw;
     }
 
     .title-book {
-        font-size: 4vw;
+        font-size: 3.8vw;
     }
 
     .author-book {
