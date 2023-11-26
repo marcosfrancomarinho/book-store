@@ -72,7 +72,7 @@ function carousel() {
 const loop = setInterval(() => {
     carousel()
     index++
-}, 1500)
+}, 1000)
 $(window).scroll(() => scrollPage())
 $(".material-symbols-outlined").click(() => {
     $("nav").toggle(500)
