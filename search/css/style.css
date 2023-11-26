@@ -264,37 +264,37 @@ h4 {
     }
 
     .title {
-        font-size: 2.2vw;
+        font-size: 4vw;
     }
 
     .title span {
-        font-size: 2.2vw;
+        font-size: 4vw;
     }
 
     .title-book {
-        font-size: 2.4vw;
+        font-size: 4vw;
     }
 
     .author-book {
-        font-size: 1.7vw;
+        font-size: 2.5vw;
     }
 
     .star {
-        font-size: 1.5vw;
+        font-size: 2.5vw;
     }
 
     .value {
-        font-size: 2vw;
+        font-size: 3.5vw;
         margin: 3px 0;
     }
 
     .content-book {
-        font-size: 1.8vw;
+        font-size: 2.5vw;
     }
 
     .image-found {
-        width: 50vw;
-        height: 30vw;
+        width: 106vw;
+        height: 45vw;
     }
 
     .image-found a img {
