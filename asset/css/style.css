@@ -288,7 +288,9 @@ button a:visited {
     background-color: var(--orange-500);
     border-radius: 2px;
     box-shadow: 1px 2px 0 0 black;
-    opacity: 0.9;
+    opacity: 0.8;
+    border: 1px solid var(--white-900);
+    text-shadow: none;
 }
 
 .btn-buy:hover {
@@ -468,7 +470,7 @@ h4 {
 
     #search {
         box-sizing: border-box;
-        font-size: 21px;
+        font-size: 20px;
         border-radius: 0;
         width: 100%;
         height: 100%;

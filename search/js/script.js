@@ -61,9 +61,12 @@ function found(element) {
     return section
 }
 function noFound() {
+    const search = JSON.parse(localStorage.getItem("value-search"))
     const section = document.createElement('section')
     section.className = "no-found-books"
-    section.innerHTML += `<div>LIVRO NÃO ECONTRADO</div>`
+    section.innerHTML = `
+    <h2 class="title"> RESULTADOS: <span> ${search}</span> </h2>
+    <p>LIVRO NÃO ENCONTRADO!</p>`
     return section
 }
 function suggestion(data) {
