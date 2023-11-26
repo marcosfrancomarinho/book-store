@@ -207,14 +207,12 @@ header {
 
 .star-suggestion {
     font-size: 1.3vw;
-    margin: 10px 0 0 0;
     font-family: 'Oxanium', sans-serif;
 }
 
 .value-sugestion {
     font-family: 'Oxanium', sans-serif;
     font-size: 1.3vw;
-    margin: 10px 0;
     font-weight: 600;
 }
 
