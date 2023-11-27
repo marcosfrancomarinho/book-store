@@ -5,7 +5,7 @@ $(window).ready(async () => {
     const object = await dataJson()
     const id = JSON.parse(localStorage.getItem("id-search"))
     let arr = []
-    if (id != 404) {
+    if (id != null) {
         object.forEach(data => {
             id.forEach(value => {
                 if (data.id === value) {
