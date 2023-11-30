@@ -6,7 +6,7 @@ const source = (value) => localStorage.setItem("id", JSON.stringify(value))
 $(window).ready(async () => {
     object = await dataJson()
     idx = JSON.parse(localStorage.getItem("id"))
-    create(object[idx], object)
+    create(object[idx])
 })
 async function dataJson() {
     const response = await fetch("../asset/js/main.json")
