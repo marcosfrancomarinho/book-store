@@ -320,9 +320,7 @@ button a:visited {
 }
 
 .content-location iframe {
-    border-radius: 10px;
-    box-shadow: var(--shadow-box);
-    box-shadow: 1px 1px 0 white;
+    border-radius: 5px;
 }
 
 .andress {
