@@ -13,10 +13,10 @@ $(window).ready(async () => {
                 }
             })
         })
-        template({ function: found, arr, object, suggestion })
+        template.bind(object)({ function: found, arr, suggestion })
     }
     else {
-        template({ function: noFound, object, suggestion })
+        template({ function: noFound, suggestion })
     }
 })
 async function dataJson() {
@@ -32,7 +32,7 @@ function template(obj) {
     } else {
         main.appendChild(obj.function())
     }
-    main.appendChild(obj.suggestion(obj.object))
+    main.appendChild(obj.suggestion(this))
 }
 
 function found(element) {

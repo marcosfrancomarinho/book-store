@@ -6,7 +6,7 @@ const source = (value) => localStorage.setItem("id", JSON.stringify(value))
 $(window).ready(async () => {
     object = await dataJson()
     idx = JSON.parse(localStorage.getItem("id"))
-    create(object[idx])
+    create.bind(object[idx])(object)
 })
 async function dataJson() {
     const response = await fetch("../asset/js/main.json")
@@ -14,26 +14,26 @@ async function dataJson() {
         return response.json()
     }
 }
-function create(e) {
-    $("title").html(e.name)
+function create(obj) {
+    $("title").html(this.name)
     const section = document.createElement('section')
     section.className = "shopping"
     section.innerHTML = `
         <div class="container">
             <div class="image">
-                    <img src=.${e.image} alt="Livro">
+                    <img src=.${this.image} alt="Livro">
             </div>
             <div class="content">
-                    <p class="title">${e.name}</p>
-                    <p class="author">${e.author}</p>
-                    <div class="star">${star(e.star)}</div>
-                    <div class="value">${convert(e.price)}</div>
+                    <p class="title">${this.name}</p>
+                    <p class="author">${this.author}</p>
+                    <div class="star">${star(this.star)}</div>
+                    <div class="value">${convert(this.price)}</div>
                     <div class="content-quant">
                             <label for="quant">Quant:</label>
                             <input type="number" value="1" id="quant" name="quant" oninput="price(this.value)">
                     </div>
                     <button class="btn-buy" onclick="buy()">COMPRAR</button>
-                    <div class="info">${e.content.slice(0, 200)}...</div>
+                    <div class="info">${this.content.slice(0, 200)}...</div>
                     <div class="read-more" onclick="readMore()"> &#9660; leia mais</div>
                     <div class="read-less" onclick="readLess()"> &#9650; leia menos</div>
             </div>
@@ -63,7 +63,7 @@ function create(e) {
             </div>
         </div>`
     document.querySelector("main").appendChild(section)
-    document.querySelector("main").appendChild(suggestion(object))
+    document.querySelector("main").appendChild(suggestion(obj))
 }
 function suggestion(data) {
     const div = document.createElement("div")
@@ -168,4 +168,4 @@ $(window).scroll(() => {
         $(".icon").show()
     }
 })
-
+

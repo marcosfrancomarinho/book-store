@@ -8,9 +8,9 @@ const width = () => document.querySelector(".content-carousel").children[0].chil
 
 $(window).ready(async () => {
     bookcase = await dataJson()
-    createCarousel(bookcase)
-    createBooks(bookcase)
-    allBoks(bookcase)
+    createCarousel.bind(bookcase)()
+    createBooks.bind(bookcase)()
+    allBoks.bind(bookcase)()
     scrollPage()
 })
 async function dataJson() {
@@ -19,8 +19,8 @@ async function dataJson() {
         return response.json()
     }
 }
-function createCarousel(object) {
-    const filter = object.filter((data) => data.carousel == true)
+function createCarousel() {
+    const filter = this.filter((data) => data.carousel == true)
     filter.map((data) => {
         document.querySelector(".content-carousel").innerHTML += `
         <a href="./shopping/index.html" target="_blank">
@@ -96,8 +96,8 @@ function scrollPage() {
         }
     }
 }
-function createBooks(object) {
-    const filter = object.filter((data) => data.show == true)
+function createBooks() {
+    const filter = this.filter((data) => data.show == true)
     filter.map((data) => {
         document.querySelector(".content-galery").innerHTML += `
         <div class="book-buy">
@@ -121,9 +121,9 @@ function star(response) {
     icon += ` ${response}.0`
     return icon
 }
-function allBoks(object) {
+function allBoks() {
     $("#search").focus()
-    object.map(data => {
+    this.map(data => {
         document.querySelector(".all-books").innerHTML += `
         <li onclick="source(${data.id})" class="option">
             <a href="./shopping/index.html" target="_blank">
