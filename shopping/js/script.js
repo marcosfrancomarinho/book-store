@@ -168,14 +168,4 @@ $(window).scroll(() => {
         $(".icon").show()
     }
 })
-
-function weather() {
-    const time = new Date().getHours()
-    if (time < 6) {
-        return "Bom dia"
-    } else if (time >= 12) {
-        return "Boa Tarde"
-    } else {
-        return "Boa Noite"
-    }
-}
+
