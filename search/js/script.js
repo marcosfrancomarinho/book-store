@@ -16,7 +16,7 @@ $(window).ready(async () => {
         template.bind(object)({ function: found, arr, suggestion })
     }
     else {
-        template({ function: noFound, suggestion })
+        template.bind(object)({ function: noFound, suggestion})
     }
 })
 async function dataJson() {
