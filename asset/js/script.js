@@ -184,7 +184,3 @@ $(window).keydown(function (e) {
 $(window).click(() => {
     $(".all-books").hide(100)
 })
-
-
-fetch("https://server-books-git-main-marcosfrancomarinho.vercel.app/books")
-    .then(res => res.json()).then(data => console.log(data))
