@@ -14,7 +14,7 @@ $(window).ready(async () => {
     scrollPage()
 })
 async function dataJson() {
-    const response = await fetch("../asset/js/main.json")
+    const response = await fetch("https://server-books-git-main-marcosfrancomarinho.vercel.app/books")
     if (response.status != 404) {
         return response.json()
     }
@@ -184,3 +184,7 @@ $(window).keydown(function (e) {
 $(window).click(() => {
     $(".all-books").hide(100)
 })
+
+
+fetch("https://server-books-git-main-marcosfrancomarinho.vercel.app/books")
+    .then(res => res.json()).then(data => console.log(data))
