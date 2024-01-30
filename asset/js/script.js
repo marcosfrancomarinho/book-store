@@ -14,7 +14,7 @@ $(window).ready(async () => {
     scrollPage()
 })
 async function dataJson() {
-    const response = await fetch("https://server-lovat-mu.vercel.app/")
+    const response = await fetch("https://server-lovat-mu.vercel.app/books")
     if (response.status != 404) {
         return response.json()
     }
