@@ -20,7 +20,7 @@ $(window).ready(async () => {
     }
 })
 async function dataJson() {
-    const response = await fetch("https://server-book.vercel.app/books")
+    const response = await fetch("https://server-lovat-mu.vercel.app/books")
     if (response.status != 404) {
         return response.json()
     }
